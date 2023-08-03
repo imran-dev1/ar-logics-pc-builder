@@ -28,7 +28,8 @@ Homepage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-   const response = await fetch("http://localhost:3002/api/products");
+
+   const response = await fetch(`${process.env.BASE_URL}/api/products`);
    const data = await response.json();
 
    return {

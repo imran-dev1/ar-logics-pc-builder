@@ -3,22 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HiOutlineChevronDown } from "react-icons/hi";
-import logo from "../../assets/images/ARLogics-logo.svg"
+import logo from "../../assets/images/ARLogics-logo.svg";
 
-const DesktopNavbar = ({ categories}) => {
+const DesktopNavbar = ({ categories }) => {
    return (
       <div
          className="flex items-center justify-between m-auto"
          style={{ maxWidth: "1200px" }}
       >
          <div className="flex items-center">
-            <Image src={logo} alt="Logo" width={150} height={40} />
+            <Link href="/">
+               <Image src={logo} alt="Logo" width={150} height={40} />
+            </Link>
          </div>
 
-         <ul
-            className="bg-transparent font-medium"
-            mode="horizontal"
-         >
+         <ul className="bg-transparent font-medium" mode="horizontal">
             <Space size={[30]} wrap>
                <Dropdown
                   overlayClassName="pt-3"
@@ -41,13 +40,11 @@ const DesktopNavbar = ({ categories}) => {
             </Space>
          </ul>
 
-         <Button
-            size="large"
-            type="primary"
-            className="bg-[#ff4922]"
-         >
-            PC Builder
-         </Button>
+         <Link href="/pc-builder">
+            <Button size="large" type="primary" className="bg-[#ff4922]">
+               PC Builder
+            </Button>
+         </Link>
       </div>
    );
 };
