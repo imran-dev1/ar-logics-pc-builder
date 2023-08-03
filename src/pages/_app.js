@@ -1,5 +1,12 @@
-import '@/styles/globals.css'
+import '../styles/globals.css'
+import { StyleProvider } from "@ant-design/cssinjs";
+export default function MyApp({ Component, pageProps }) {
+   // Use the layout defined at the page level, if available
+   const getLayout = Component.getLayout || ((page) => page);
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+   return getLayout(
+      <StyleProvider hashPriority="high">
+         <Component {...pageProps} />
+      </StyleProvider>
+   );
 }
