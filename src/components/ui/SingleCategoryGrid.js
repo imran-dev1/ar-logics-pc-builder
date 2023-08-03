@@ -15,25 +15,25 @@ import { GiEnergyTank } from "react-icons/gi";
 const SingleCategoryGrid = ({ category }) => {
    const icon =
       category === "CPU/Processor" ? (
-         <BsCpu className="text-2xl m-auto"></BsCpu>
+         <BsCpu className="text-4xl m-auto"></BsCpu>
       ) : category === "Motherboard" ? (
-         <BsMotherboard className="text-2xl m-auto"></BsMotherboard>
+         <BsMotherboard className="text-4xl m-auto"></BsMotherboard>
       ) : category === "RAM" ? (
-         <LuMemoryStick className="text-2xl m-auto"></LuMemoryStick>
+         <LuMemoryStick className="text-4xl m-auto"></LuMemoryStick>
       ) : category === "Storage Device" ? (
-         <BsDeviceSsd className="text-2xl m-auto"></BsDeviceSsd>
+         <BsDeviceSsd className="text-4xl m-auto"></BsDeviceSsd>
       ) : category === "Monitor" ? (
-         <PiMonitor className="text-2xl m-auto"></PiMonitor>
+         <PiMonitor className="text-4xl m-auto"></PiMonitor>
       ) : category === "Others" ? (
-        <BsKeyboard className="text-2xl m-auto"></BsKeyboard>
+        <BsKeyboard className="text-4xl m-auto"></BsKeyboard>
      ) : category === "Power Supply Unit" ? (
-        <GiEnergyTank className="text-2xl m-auto"></GiEnergyTank>
+        <GiEnergyTank className="text-4xl m-auto"></GiEnergyTank>
      ) :(
          ""
       );
       
    return (
-      <Card size="small" hoverable>
+      <Card size="small" hoverable className=" shadow-md">
          {icon}
          <h3 className="text-center mt-2">{category}</h3>
       </Card>

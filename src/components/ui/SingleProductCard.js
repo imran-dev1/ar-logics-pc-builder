@@ -16,6 +16,7 @@ const SingleProductCard = ({ product }) => {
       <Link href={`/product/${_id}`}>
          <Card
             size="small"
+            className="shadow-sm"
             hoverable
             actions={[
                <span key="status" className=" text-slate-500">
