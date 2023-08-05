@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useRouter } from "next/router";
 
 const initialState = {
    processor: [],
@@ -9,6 +10,7 @@ const initialState = {
    monitor: [],
 };
 
+
 export const pcBuilderSlice = createSlice({
    name: "counter",
    initialState,
@@ -16,7 +18,8 @@ export const pcBuilderSlice = createSlice({
       addComponent: (state, action) => {
          const category = action.payload.category;
          state.category = [];
-         state.category.push(action.payload.product);
+           state.category.push(action.payload.product);
+           
       },
       removeComponent: (state, action) => {
          const category = action.payload.category;

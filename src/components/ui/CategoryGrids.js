@@ -14,7 +14,7 @@ const CategoryGrids = ({ products }) => {
    });
    return (
       <div>
-         <div className="grid grid-rows-4 sm:grid-rows-3 lg:grid-rows-1 grid-flow-col gap-4">
+         <div className="grid gap-4 grid-cols-2 sm:grid-cols-4 md:grid-cols-7">
             {categories.map((category, index) => {
                return (
                   <SingleCategoryGrid

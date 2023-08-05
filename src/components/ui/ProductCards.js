@@ -4,7 +4,7 @@ import SingleProductCard from "./SingleProductCard";
 const ProductCards = ({ allProducts }) => {
    return (
       <div className="mb-10">
-         <div className="grid grid-flow-col gap-4 grid-cols-2 sm:grid-cols-4 grid-rows-4 sm:grid-rows-2">
+         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {allProducts.map((product) => {
                if (product.featured) {
                   return (

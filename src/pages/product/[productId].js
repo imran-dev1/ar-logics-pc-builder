@@ -43,8 +43,8 @@ const ProductDetails = ({ product }) => {
                },
             ]}
          />
-         <div className="columns-1 md:columns-2 mt-10 overflow-hidden">
-            <div className="thumbnail">
+         <div className="columns-1 md:columns-2 mt-20 overflow-hidden">
+            <div className="thumbnail mb-5">
                <Image
                   src={image}
                   alt="Product Image"
@@ -55,7 +55,7 @@ const ProductDetails = ({ product }) => {
             <div className="product-info overflow-hidden">
                <h1 className="text-2xl">{name}</h1>
                <p>Category: {category}</p>
-               <p className="grid gap-3 text-md my-3 grid-cols-2">
+               <p className="grid gap-3 text-md my-3 grid-cols-2 mt-5">
                   <span className=" bg-blue-100 p-2 text-slate-500 rounded-md flex justify-center items-center gap-2">
                      Price:<span className="text-black"> ${price}</span>
                   </span>
@@ -70,7 +70,7 @@ const ProductDetails = ({ product }) => {
                      <span className="text-black"> {average_rating}/5</span>
                   </span>
                </p>
-               <p className="description">{description}</p>
+               <p className="description py-5">{description}</p>
                <Divider
                   orientation="left"
                   orientationMargin="0"
@@ -78,7 +78,7 @@ const ProductDetails = ({ product }) => {
                >
                   <h5 className="text-md">Key Features</h5>
                </Divider>
-               <div>
+               <div className="pb-5">
                   {keys.map((key, index) => {
                      return (
                         <li
@@ -104,7 +104,7 @@ const ProductDetails = ({ product }) => {
                   {reviews.map((review,i) => {
                      return (
                         <div className="flex gap-4 mb-2" key={i}>
-                           <div className="text-slate-600 w-16 p-4 bg-orange-100 text-orange-500 flex justify-center rounded-md">{review.rating}</div>
+                           <div className="w-16 p-4 bg-orange-100 text-orange-500 flex justify-center items-center rounded-md">{review.rating}</div>
                            <div className=" bg-orange-100 text-black  flex-auto p-4 rounded-md">{review.comment}</div>
                         </div>
                      );

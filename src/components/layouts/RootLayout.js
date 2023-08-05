@@ -8,31 +8,31 @@ const RootLayout = ({ children }) => {
    const categories = [
       {
          key: "cpu",
-         label: <Link href="">CPU / Processor</Link>,
+         label: <Link href="/category/cpu-processor">CPU / Processor</Link>,
       },
       {
          key: "motherboard",
-         label: <Link href="">Motherboard</Link>,
+         label: <Link href="/category/motherboard">Motherboard</Link>,
       },
       {
          key: "ram",
-         label: <Link href="">RAM</Link>,
+         label: <Link href="/category/ram">RAM</Link>,
       },
       {
          key: "psu",
-         label: <Link href="">Power Supply Unit</Link>,
+         label: <Link href="/category/power-supply-unit">Power Supply Unit</Link>,
       },
       {
          key: "storage",
-         label: <Link href="">Storage Device</Link>,
+         label: <Link href="/category/storage-device">Storage Device</Link>,
       },
       {
          key: "monitor",
-         label: <Link href="">Monitor</Link>,
+         label: <Link href="/category/monitor">Monitor</Link>,
       },
       {
          key: "others",
-         label: <Link href="">Others</Link>,
+         label: <Link href="/category/others">Others</Link>,
       },
    ];
    return (
@@ -52,7 +52,7 @@ const RootLayout = ({ children }) => {
          <Content className="bg-white">
             <div className="site-layout-conten">
                <div
-                  className="py-10 m-auto px-3"
+                  className="pt-10 pb-16 m-auto px-3"
                   style={{ maxWidth: "1200px" }}
                >
                   {children}
