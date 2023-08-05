@@ -2,7 +2,12 @@ import RootLayout from "@/components/layouts/RootLayout";
 import React from "react";
 
 const PCBuilder = () => {
-   return <div>PC Builder</div>;
+   return <div>
+      <h2>Make Your Own PC</h2>
+      <div>
+         
+      </div>
+   </div>;
 };
 
 export default PCBuilder;

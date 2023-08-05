@@ -1,20 +1,21 @@
 import { ObjectId } from "mongodb";
-import {client} from './index'
-
+import { client } from "../products/index";
 
 async function handler(req, res) {
    try {
       await client.connect();
       const productsCollection = client.db("ar-logics").collection("products");
       if (req.method === "GET") {
-          const product = await productsCollection.findOne({ _id: new ObjectId(req.query.id) })
+         const products = await productsCollection
+            .find({ category_slug: req.query.categorySlug })
+            .toArray();
          res.send({
             message: "Success",
             status: 200,
-            data: product,
+            data: products,
          });
       }
    } finally {
    }
 }
-export default handler
+export default handler;

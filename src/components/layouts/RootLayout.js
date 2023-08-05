@@ -51,9 +51,8 @@ const RootLayout = ({ children }) => {
          </header>
          <Content className="bg-white">
             <div className="site-layout-conten">
-               {" "}
                <div
-                  className="py-10 m-auto h-full px-3"
+                  className="py-10 m-auto px-3"
                   style={{ maxWidth: "1200px" }}
                >
                   {children}
@@ -66,7 +65,7 @@ const RootLayout = ({ children }) => {
                textAlign: "center",
             }}
          >
-            Ant Design ©2023 Created by Ant UED
+            AR Logics PC Builder ©2023 Developed by Imran
          </Footer>
       </Layout>
    );
