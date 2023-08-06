@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Button, Drawer } from "antd";
+import { Button, Drawer, Menu } from "antd";
 import { RiMenu3Fill } from "react-icons/ri";
 import Image from "next/image";
 import logo from "../../assets/images/ARLogics-logo.svg";
 import Link from "next/link";
+import { BsArrowLeft } from "react-icons/bs";
 
 const MobileNav = ({ categories }) => {
    const [open, setOpen] = useState(false);
@@ -33,14 +34,18 @@ const MobileNav = ({ categories }) => {
                   className="text-2xl"
                ></RiMenu3Fill>
                <Drawer
-                  title="Basic Drawer"
+                  width="320"
+                  title="Categories"
+                  closeIcon={<BsArrowLeft className="text-2xl text-black" />}
                   placement="right"
                   onClose={onClose}
                   open={open}
                >
-                  <p>Some contents...</p>
-                  <p>Some contents...</p>
-                  <p>Some contents...</p>
+                  <Menu>
+                        {categories.map(({ key, label }) => (
+                           <Menu.Item key={key}>{label}</Menu.Item>
+                        ))}
+                     </Menu>
                </Drawer>
             </div>
          </div>
