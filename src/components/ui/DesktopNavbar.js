@@ -1,11 +1,21 @@
-import { Button, Dropdown, Menu, Space } from "antd";
+import { Avatar, Button, Dropdown, Menu, Space } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HiOutlineChevronDown } from "react-icons/hi";
 import logo from "../../assets/images/ARLogics-logo.svg";
+import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const DesktopNavbar = ({ categories }) => {
+   const { data: session } = useSession({});
+   const router = useRouter();
+
+   const handleSignOut = async () => {
+      await signOut();
+      router.replace("/");
+   };
+
    return (
       <div
          className="flex items-center justify-between m-auto"
@@ -36,7 +46,16 @@ const DesktopNavbar = ({ categories }) => {
                      Categories <HiOutlineChevronDown></HiOutlineChevronDown>
                   </a>
                </Dropdown>
-               <Link href="/about">About</Link>
+
+               {session?.user ? (
+                  <>
+                     <Avatar size="large" src={session?.user?.image} />
+                     <span className="-ml-5">{session?.user?.name}</span>
+                     <button onClick={handleSignOut}>Logout</button>
+                  </>
+               ) : (
+                  <Link href="/login">Login</Link>
+               )}
             </Space>
          </ul>
 
